@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dormitorio - Muebles Express</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-top">
+            <div class="container">
+                <div class="header-top-content">
+                    <div class="contact-info">
+                        <span><i class="fas fa-phone"></i> +56 2 2345 6789</span>
+                        <span><i class="fas fa-envelope"></i> contacto@mueblesexpress.cl</span>
+                    </div>
+                    <div class="user-actions">
+                        <a href="#" class="login-btn"><i class="fas fa-user"></i> Iniciar Sesión</a>
+                        <a href="#" class="register-btn">Registrarse</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="header-main">
+            <div class="container">
+                <div class="header-main-content">
+                    <div class="logo">
+                        <a href="index.html" style="text-decoration: none; color: inherit;">
+                            <h1>Muebles Express</h1>
+                        </a>
+                    </div>
+                    
+                    <div class="search-bar">
+                        <input type="text" placeholder="Buscar muebles, decoración, electrodomésticos...">
+                        <button type="submit"><i class="fas fa-search"></i></button>
+                    </div>
+                    
+                    <div class="header-actions">
+                        <a href="#" class="wishlist-btn">
+                            <i class="fas fa-heart"></i>
+                            <span>Favoritos</span>
+                        </a>
+                        <a href="#" class="cart-btn" id="cartBtn">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span>Carrito</span>
+                            <span class="cart-count" id="cartCount">0</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <nav class="main-nav">
+            <div class="container">
+                <ul class="nav-menu">
+                    <li><a href="index.html"><i class="fas fa-home"></i> Inicio</a></li>
+                    <li class="dropdown active">
+                        <a href="#">Muebles <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="categoria-sala.html">Sala de estar</a></li>
+                            <li><a href="categoria-comedor.html">Comedor</a></li>
+                            <li><a href="categoria-dormitorio.html" class="active">Dormitorio</a></li>
+                            <li><a href="categoria-oficina.html">Oficina</a></li>
+                            <li><a href="categoria-jardin.html">Jardín</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Decoración</a></li>
+                    <li><a href="#">Electrodomésticos</a></li>
+                    <li><a href="#">Ofertas</a></li>
+                    <li><a href="#">Nuevos</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Breadcrumb -->
+    <section class="breadcrumb">
+        <div class="container">
+            <nav class="breadcrumb-nav">
+                <a href="index.html">Inicio</a>
+                <span><i class="fas fa-chevron-right"></i></span>
+                <a href="#">Muebles</a>
+                <span><i class="fas fa-chevron-right"></i></span>
+                <span class="current">Dormitorio</span>
+            </nav>
+        </div>
+    </section>
+
+    <!-- Category Hero -->
+    <section class="category-hero">
+        <div class="container">
+            <div class="category-hero-content">
+                <div class="category-info">
+                    <h1>Dormitorio</h1>
+                    <p>Transforma tu dormitorio en un oasis de confort y descanso con nuestros muebles de dormitorio. Desde camas elegantes hasta roperos funcionales, encuentra todo lo que necesitas para crear el espacio perfecto para descansar y renovarte.</p>
+                    <div class="category-stats">
+                        <span><i class="fas fa-bed"></i> 10 productos</span>
+                        <span><i class="fas fa-star"></i> 4.7/5 calificación</span>
+                        <span><i class="fas fa-truck"></i> Envío gratis</span>
+                    </div>
+                </div>
+                <div class="category-image">
+                    <img src="https://images.unsplash.com/photo-1505693314120-0d443867891c?w=500&h=300&fit=crop" alt="Dormitorio">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Filters and Catalog -->
+    <section class="catalog-section">
+        <div class="container">
+            <div class="catalog-layout">
+                <!-- Filters Sidebar -->
+                <aside class="filters-sidebar">
+                    <h3>Filtros</h3>
+                    
+                    <div class="filter-group">
+                        <h4>Tipo de Producto</h4>
+                        <label><input type="checkbox" value="cama" checked> Camas</label>
+                        <label><input type="checkbox" value="ropero" checked> Roperos</label>
+                        <label><input type="checkbox" value="mesa" checked> Mesas de Noche</label>
+                        <label><input type="checkbox" value="comoda"> Cómodas</label>
+                    </div>
+                    
+                    <div class="filter-group">
+                        <h4>Precio</h4>
+                        <div class="price-range">
+                            <input type="range" id="priceRange" min="0" max="1000000" value="500000">
+                            <div class="price-inputs">
+                                <input type="number" id="minPrice" placeholder="Mín" value="0">
+                                <span>-</span>
+                                <input type="number" id="maxPrice" placeholder="Máx" value="500000">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="filter-group">
+                        <h4>Material</h4>
+                        <label><input type="checkbox" value="madera"> Madera</label>
+                        <label><input type="checkbox" value="metal"> Metal</label>
+                        <label><input type="checkbox" value="tela"> Tela</label>
+                        <label><input type="checkbox" value="cuero"> Cuero</label>
+                    </div>
+                    
+                    <div class="filter-group">
+                        <h4>Color</h4>
+                        <div class="color-filters">
+                            <span class="color-option" data-color="blanco" style="background-color: white;"></span>
+                            <span class="color-option" data-color="marron" style="background-color: #8B4513;"></span>
+                            <span class="color-option" data-color="negro" style="background-color: black;"></span>
+                            <span class="color-option" data-color="gris" style="background-color: #808080;"></span>
+                        </div>
+                    </div>
+                    
+                    <div class="filter-group">
+                        <h4>Características</h4>
+                        <label><input type="checkbox" value="king"> King Size</label>
+                        <label><input type="checkbox" value="queen"> Queen Size</label>
+                        <label><input type="checkbox" value="cabecera"> Con Cabecera</label>
+                        <label><input type="checkbox" value="cajones"> Con Cajones</label>
+                    </div>
+                    
+                    <button class="clear-filters">Limpiar Filtros</button>
+                </aside>
+
+                <!-- Products Container -->
+                <main class="products-container">
+                    <div class="products-header">
+                        <div class="results-info">
+                            <span id="productCount">3 productos encontrados</span>
+                        </div>
+                        <div class="sort-options">
+                            <select id="sortSelect">
+                                <option value="popular">Más populares</option>
+                                <option value="price-low">Precio: menor a mayor</option>
+                                <option value="price-high">Precio: mayor a menor</option>
+                                <option value="newest">Más recientes</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="products-grid" id="productsGrid">
+                        <!-- Products will be loaded here -->
+                    </div>
+                    
+                    <div class="pagination">
+                        <button class="prev-page">Anterior</button>
+                        <div class="page-numbers">
+                            <span class="active">1</span>
+                        </div>
+                        <button class="next-page">Siguiente</button>
+                    </div>
+                </main>
+            </div>
+        </div>
+    </section>
+
+    <!-- Category Features -->
+    <section class="category-features">
+        <div class="container">
+            <h3 class="section-title">¿Por qué elegir nuestros muebles de dormitorio?</h3>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <i class="fas fa-bed"></i>
+                    <h4>Confort Superior</h4>
+                    <p>Diseñados para ofrecer el máximo confort y descanso con materiales premium y ergonomía avanzada.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-palette"></i>
+                    <h4>Estilos Versátiles</h4>
+                    <p>Desde clásico hasta moderno, tenemos opciones que se adaptan a cualquier decoración y personalidad.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-shield-alt"></i>
+                    <h4>Calidad Duradera</h4>
+                    <p>Materiales resistentes y construcción sólida que garantizan años de uso sin problemas.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-truck"></i>
+                    <h4>Envío e Instalación</h4>
+                    <p>Entrega gratuita en todo Chile e instalación profesional incluida en tu compra.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Shopping Cart Modal -->
+    <div class="cart-modal" id="cartModal">
+        <div class="cart-content">
+            <div class="cart-header">
+                <h3>Carrito de Compras</h3>
+                <button class="close-cart" id="closeCart">&times;</button>
+            </div>
+            <div class="cart-items" id="cartItems">
+                <!-- Cart items will be loaded here -->
+            </div>
+            <div class="cart-footer">
+                <div class="cart-total">
+                    <span>Total:</span>
+                    <span id="cartTotal">$0</span>
+                </div>
+                <button class="checkout-btn">Finalizar Compra</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Muebles Express</h4>
+                    <p>Tu tienda de confianza para muebles de calidad. Encuentra todo lo que necesitas para decorar tu hogar.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Productos</h4>
+                    <ul>
+                        <li><a href="categoria-sala.html">Sala de estar</a></li>
+                        <li><a href="categoria-comedor.html">Comedor</a></li>
+                        <li><a href="categoria-dormitorio.html">Dormitorio</a></li>
+                        <li><a href="categoria-oficina.html">Oficina</a></li>
+                        <li><a href="categoria-jardin.html">Jardín</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Servicio al Cliente</h4>
+                    <ul>
+                        <li><a href="#">Contacto</a></li>
+                        <li><a href="#">Envíos</a></li>
+                        <li><a href="#">Devoluciones</a></li>
+                        <li><a href="#">Garantía</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Información</h4>
+                    <ul>
+                        <li><a href="#">Sobre nosotros</a></li>
+                        <li><a href="#">Términos y condiciones</a></li>
+                        <li><a href="#">Política de privacidad</a></li>
+                        <li><a href="#">Trabaja con nosotros</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 Muebles Express. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="categoria-dormitorio.js"></script>
+</body>
+</html> 
